@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
-  const { title, mode, aboutText } = props;
+  const { title, mode, aboutText, toggleMode } = props;
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
@@ -47,9 +47,10 @@ const Navbar = (props) => {
                 type="checkbox"
                 role="switch"
                 id="flexSwitchCheckChecked"
+                onClick={toggleMode}
               />
               <label className="form-check-label" for="flexSwitchCheckChecked">
-                Enable Light Mode
+                {mode === "light" ? "Enable Dark Mode" : "Enbale Light Mode"}
               </label>
             </div>
           </div>
